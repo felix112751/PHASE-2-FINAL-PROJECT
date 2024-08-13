@@ -1,0 +1,84 @@
+{
+  "artworks": [
+    {
+      "id": 1,
+      "title": "Starry Night",
+      "artist": "Vincent van Gogh",
+      "image": "https://www.vangoghgallery.com/img/starry_night_full.jpg",
+      "year": 1889,
+      "likes": 5
+    },
+    {
+      "id": 2,
+      "title": "Mona Lisa",
+      "artist": "Leonardo da Vinci",
+      "image": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-mona-lisa.jpg",
+      "year": 1503,
+      "likes": 10
+    },
+    {
+      "id": 3,
+      "title": "The Persistence of Memory",
+      "artist": "Salvador Dalí",
+      "image": "https://www.moma.org/media/W1siZiIsIjM0NzYwMSJdLFsicCIsImNvbnZlcnQiLCItcmVzaXplIDY0MHg2NDBcdTAwM2UiXV0.jpg",
+      "year": 1931,
+      "likes": 8
+    },
+    {
+      "id": 4,
+      "title": "The Scream",
+      "artist": "Edvard Munch",
+      "image": "https://www.edvardmunch.org/images/paintings/the-scream.jpg",
+      "year": 1893,
+      "likes": 7
+    },
+    {
+      "id": 5,
+      "title": "Girl with a Pearl Earring",
+      "artist": "Johannes Vermeer",
+      "image": "https://www.mauritshuis.nl/media/collections/1080/girl_with_a_pearl_earring.jpg",
+      "year": 1665,
+      "likes": 9
+    },
+    {
+      "id": 6,
+      "title": "Guernica",
+      "artist": "Pablo Picasso",
+      "image": "https://www.pablopicasso.org/images/paintings/guernica3.jpg",
+      "year": 1937,
+      "likes": 12
+    },
+    {
+      "id": 7,
+      "title": "The Night Watch",
+      "artist": "Rembrandt",
+      "image": "https://www.rijksmuseum.nl/en/rijksstudio/artists/rembrandt-van-rijn/objects#/SK-C-5,0",
+      "year": 1642,
+      "likes": 6
+    },
+    {
+      "id": 8,
+      "title": "The Birth of Venus",
+      "artist": "Sandro Botticelli",
+      "image": "https://www.uffizi.it/sites/default/files/styles/slider_full/public/img/La_nascita_di_Venere_di_Sandro_Botticelli.jpg",
+      "year": 1486,
+      "likes": 11
+    },
+    {
+      "id": 9,
+      "title": "American Gothic",
+      "artist": "Grant Wood",
+      "image": "https://www.artic.edu/iiif/2/64c99bd0-f8f4-1e7b-d93b-f5b13c7e77fd/full/843,/0/default.jpg",
+      "year": 1930,
+      "likes": 4
+    },
+    {
+      "id": 10,
+      "title": "The Kiss",
+      "artist": "Gustav Klimt",
+      "image": "https://www.belvedere.at/sites/default/files/styles/xl_800_800/public/2021-10/Klimt-Kuss.png",
+      "year": 1908,
+      "likes": 13
+    }
+  ]
+}
