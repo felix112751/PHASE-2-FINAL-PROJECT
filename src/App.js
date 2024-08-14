@@ -1,10 +1,11 @@
 import React from 'react'
-import Contacts  from './Pages/Contacts';
-
+import Contact from './components/Contact'
+import './App.css'
+  
 function App() {
     return (
       <div>
-       <Contacts />
+       <Contact />
   </div>
     );
   }
