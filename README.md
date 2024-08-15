@@ -91,7 +91,7 @@ json-server --watch db.json
 ### Contributors
 This application was a group project that was created by 4 contributors:
 
-- [Felix_Goyer](https://github.com/felix112751)
+- [Felix_Goyeh](https://github.com/felix112751)
 - [Yussuf_Ibrahim](https://github.com/Yussuf-ibra)
 - [Mark_Kamau](https://github.com/Mars254)
 - [Fiona_Mburu](https://github.com/mburufiona)
