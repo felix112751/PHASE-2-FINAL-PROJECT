@@ -5,7 +5,8 @@ import Home from "./Components/Home";
 import Gallery from "./Components/Gallery";
 import AddArt from "./Components/AddArt";
 import Cart from "./Components/Cart";
-import ArtDetail from "./Components/ArtDetail";
+import ArtDetail from "./Components/ArtDetails";
+// import ArtDetail from "./Components/ArtDetail";
 
 function App() {
   const [artworks, setArtworks] = useState([]);
