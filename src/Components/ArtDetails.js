@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 function ArtDetail({ artworks, onLike, onAddToCart }) {
   const { id } = useParams();
-  const art = artworks.find((art) => art.id === id); // Check for string IDs
+  const art = artworks.find((art) => art.id === id); 
 
   if (!art) {
     return <p>Art not found!</p>;

@@ -5,8 +5,8 @@ import Home from "./Components/Home";
 import Gallery from "./Components/Gallery";
 import AddArt from "./Components/AddArt";
 import Cart from "./Components/Cart";
-import ArtDetail from "./Components/ArtDetails";
-// import ArtDetail from "./Components/ArtDetail";
+import ArtDetails from "./Components/ArtDetails";
+import Contacts from "./Components/Contacts";
 
 function App() {
   const [artworks, setArtworks] = useState([]);
@@ -68,6 +68,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery artworks={artworks} />} />
         <Route path="/add" element={<AddArt onAddArt={addArt} />} />
+        <Route path="/contacts" element={<Contacts />} />
         <Route
           path="/cart"
           element={<Cart cartItems={cart} onRemoveFromCart={removeFromCart} />}
@@ -75,7 +76,7 @@ function App() {
         <Route
           path="/art/:id"
           element={
-            <ArtDetail
+            <ArtDetails
               artworks={artworks}
               onLike={likeArt}
               onAddToCart={addToCart}
