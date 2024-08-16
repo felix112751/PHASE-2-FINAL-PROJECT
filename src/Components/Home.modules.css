@@ -377,3 +377,11 @@ body{
     background-color: #ff0000;
   }
   
+  .B{
+    text-decoration: none;
+    color: black;
+  }
+
+  .B:hover{
+    color: white;
+  }

@@ -4,6 +4,7 @@ import "./Home.modules.css";
 import Navbar from "./Navbar";
 import art from "../Assets/art4.mp4"
 import { useTypewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [typeEffect] = useTypewriter({
@@ -35,14 +36,14 @@ function Home() {
            
             <a class="fancy" href="#">
                   <span class="top-key"></span>
-                  <span class="text">POST IMAGE</span>
+                  <span class="text"> <Link to="/add" className="B"><span>POST IMAGE</span></Link> </span>
                   <span class="bottom-key-1"></span>
                   <span class="bottom-key-2"></span>
                 </a>
 
 
               <button className="btn">
-              <a href="#" className="a"><span>EXPLORE</span></a> 
+              <Link to="/gallery" className="a"><span>EXPLORE</span></Link> 
               </button>
 
            
