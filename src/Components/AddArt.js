@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./AddArt.css"; // Import the CSS file
+import Navbar from "./Navbar";
 
 function AddArt({ onAddArt }) {
   const [title, setTitle] = useState("");
@@ -40,7 +42,10 @@ function AddArt({ onAddArt }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+        <Navbar />
+    <div className="mein">
+    <form onSubmit={handleSubmit} className="add-art-container">
       <h2>Add New Art</h2>
       <label>
         Title:
@@ -48,6 +53,7 @@ function AddArt({ onAddArt }) {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          placeholder="Enter art title"
         />
       </label>
       <label>
@@ -56,6 +62,7 @@ function AddArt({ onAddArt }) {
           type="text"
           value={artist}
           onChange={(e) => setArtist(e.target.value)}
+          placeholder="Enter artist name"
         />
       </label>
       <label>
@@ -64,6 +71,7 @@ function AddArt({ onAddArt }) {
           type="text"
           value={image}
           onChange={(e) => setImage(e.target.value)}
+          placeholder="Enter image URL"
         />
       </label>
       <label>
@@ -72,6 +80,7 @@ function AddArt({ onAddArt }) {
           type="number"
           value={year}
           onChange={(e) => setYear(e.target.value)}
+          placeholder="Enter year of creation"
         />
       </label>
       <label>
@@ -80,14 +89,21 @@ function AddArt({ onAddArt }) {
           type="number"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
+          placeholder="Enter price"
         />
       </label>
       <label>
         Detail:
-        <textarea value={detail} onChange={(e) => setDetail(e.target.value)} />
+        <textarea
+          value={detail}
+          onChange={(e) => setDetail(e.target.value)}
+          placeholder="Enter additional details"
+        />
       </label>
       <button type="submit">Add Art</button>
     </form>
+    </div>
+    </>
   );
 }
 

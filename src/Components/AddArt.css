@@ -1,0 +1,102 @@
+/* .mein{
+  min-height: 500vh;
+} */
+.add-art-container {
+    position: relative;
+    top: -1200px;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+  
+      backface-visibility: hidden;
+      padding: 65px 45px;
+      border-radius: 15px;
+      box-shadow: inset 2px 2px 10px rgba(0,0,0,1),
+      inset -1px -1px 5px rgba(255, 255, 255, 0.6);
+
+      background: rgba( 255, 255, 255, 0 );
+      box-shadow: 0 8px 32px 0 rgba(black);
+      backdrop-filter: blur( 3.5px );
+      -webkit-backdrop-filter: blur( 3.5px );
+      border-radius: 10px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    
+    .add-art-container h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .add-art-container label {
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      color: #555;
+    }
+    
+    .add-art-container input,
+    .add-art-container textarea {
+      width: 96%;
+      padding: 10px;
+      margin-top: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #00000036;
+      transition: border-color 0.3s ease;
+  
+      outline: none;
+      transition: 0.35s;
+      border: 2px solid #212121;
+      box-shadow: 6px 6px 10px rgba(0,0,0,1),
+      1px 1px 10px rgba(255, 255, 255, 0.6);
+    }
+  
+   
+    
+    .add-art-container input:focus,
+    .add-art-container textarea:focus {
+      transform: scale(1.01);
+      outline: none;
+    }
+    
+    .add-art-container textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .add-art-container button {
+      border-radius: 6px;
+      border: 2px solid black;
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 1.5rem;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      background-color: #00000080;
+      box-shadow: 3px 3px 6px #101014;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .add-art-container button:hover {
+      background-color: #000000;
+      transform: translateY(-2px);
+  
+      transform: scale(1.02);
+    }
+    
+    .add-art-container button:active {
+      transform: translateY(0);
+    }
+    

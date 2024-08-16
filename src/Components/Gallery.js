@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Gallery.css"; // Import the CSS file
+import Navbar from "./Navbar";
+
 
 function Gallery({ artworks }) {
   return (
-    <div>
+    <div className="odin">
+
+<Navbar /> 
+    <div className="gallery-container">
       <h2>Gallery</h2>
       <div className="art-list">
         {artworks.map((art) => (
@@ -12,11 +18,15 @@ function Gallery({ artworks }) {
             <img src={art.image} alt={art.title} />
             <p>Price: ${art.price}</p>
             <p>Likes: {art.likes}</p>
-            <p>{art.sold ? "Sold Out" : "Available"}</p>
-            <Link to={`/art/${art.id}`}>View Details</Link>
+            <p className={art.sold ? "sold-out" : "available"}>
+              {art.sold ? "Sold Out" : "Available"}
+            </p>
+            <Link to={`/art/${art.id}`} className="button">View Details</Link>
           </div>
         ))}
       </div>
+    </div>
+
     </div>
   );
 }
