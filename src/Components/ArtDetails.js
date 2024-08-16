@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 
 function ArtDetail({ artworks, onLike, onAddToCart }) {
   const { id } = useParams();
-  const art = artworks.find((art) => art.id === id); // Check for string IDs
+  const art = artworks.find((art) => art.id === id); 
 
   if (!art) {
     return <p>Art not found!</p>;
