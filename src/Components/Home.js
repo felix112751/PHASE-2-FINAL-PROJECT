@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./Home.modules.css";
 import Navbar from "./Navbar";
 import art from "../Assets/art4.mp4"

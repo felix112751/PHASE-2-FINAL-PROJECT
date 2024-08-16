@@ -46,6 +46,9 @@
   
   .navbar-links a:hover {
     color: orange;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   }
   
 
