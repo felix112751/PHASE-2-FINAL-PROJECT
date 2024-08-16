@@ -98,8 +98,8 @@ This application was a group project that was created by 4 contributors:
 
 This project is open-source and available under the MIT License.
 
-### SLIDESHOW LINK
-[Slideshow](https://docs.google.com/presentation/d/1IRCRQYu0cUWd-HbBsiXB8Cec1W2tuaM7zZkTBUK3O9U/edit#slide=id.gc6f59039d_0_14)
+### SLIDES LINK
+[Slides](https://docs.google.com/presentation/d/1IRCRQYu0cUWd-HbBsiXB8Cec1W2tuaM7zZkTBUK3O9U/edit#slide=id.gc6f59039d_0_14)
 
 ### Deployed Link.
 [LINK](https://phase-2-final-project.vercel.app/)
