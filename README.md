@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# PHASE 2 PROJECT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## VIRTUAL ART PROJECT
 
-## Available Scripts
+## *Overview*
 
-In the project directory, you can run:
+Virtual Art Project is an e-commerce platform that has been built using React. The platform allows users to browse, like and purchase artworks, the platform also adds artworks for sellers who want to sell their art and it also provides a basic shopping cart functionality. 
 
-### `npm start`
+## *Functionality*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Browse artworks in the gallery.
+- View details of individual artworks.
+- Add artworks to shopping cart.
+- Remove artworks from the shopping cart.
+- Like artworks to show appreciation.
+- Lets the users add their artwork.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## *Project Details*
 
-### `npm test`
+- Built using React and React outer for client-side routing.
+- Uses backend API to manage artwork data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## *Components*
 
-### `npm run build`
+1. `Navbar`: A navigation bar component that provides links to different routes.
+2. `Home`: A home page component that displays the landing page which includes a welcome message.
+3. `Gallery`: A gallery component that displays a list of artworks.
+4. `AddArt`: A component that allows users to add new artworks.
+5. `ArtDetails`: A component that displays the details of an individual artwork.
+5. `Cart`: A shopping cart component that displays the artworks added by the user.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## *API Endpoints*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `GET `: Retrieves a list of artworks from the backend API
+- `POST `: Creates a new artwork in the backend API
+- `PATCH `: Updates an existing artwork in the backend API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+To run this project locally, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. #### Clone the repository:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone
+cd PHASE-2-FINAL-PROJECT
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. #### Set up JSON Server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ensure you have JSON server installed. If not, install it using npm:
 
-## Learn More
+```bash
+npm install -g json-server
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. #### Create db.json file:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A db.json file was provided containing the 10 objects containing the title, artist name, image, year, likes, price of artwork, artworks sold and details of each artwork. Here is an example:
 
-### Code Splitting
+```bash
+    {
+      "id": "1",
+      "title": "Starry Night",
+      "artist": "Vincent van Gogh",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiXokZHJc3iND6Uqax-iQ-nU6PmC5lRPqIw&s",
+      "year": 1889,
+      "likes": 8,
+      "price": 5000,
+      "sold": false,
+      "detail": " Starry Night is one of Vincent van Gogh's most iconic paintings, created in 1889. It depicts a swirling night sky over a tranquil village, with bold, expressive brushstrokes capturing the motion of the stars and the moon. The scene is framed by a dark cypress tree in the foreground, contrasting against the vibrant, star-filled sky. This masterpiece is celebrated for its emotional intensity, innovative use of color, and dramatic brushwork, reflecting van Gogh's turbulent state of mind and his fascination with the cosmos."
+    },
+    {
+      "id": "2",
+      "title": "Mona Lisa",
+      "artist": "Leonardo da Vinci",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0s5B5TIgNtd8NBG31BBu2v1cCxIZi3AEE2g&s",
+      "year": 1503,
+      "likes": 10,
+      "price": 100000,
+      "sold": false,
+      "detail": "The Mona Lisa is a portrait painting by the Italian Renaissance artist Leonardo da Vinci, completed between 1503 and 1506. The artwork depicts a woman with an enigmatic expression, famously known for her subtle smile. It is renowned for its sophisticated use of sfumato—a technique that creates a soft, gradual transition between colors and tones. The painting is housed in the Louvre Museum in Paris and is considered one of the most iconic and celebrated artworks in the world. The identity of the woman in the portrait, often believed to be Lisa Gherardini, remains a topic of debate and intrigue."
+    }
+```
+#### 4. Run the JSON server:
+Start the server by running the following command in the project directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+json-server --watch db.json
+```
+### Contributors
+This application was a group project that was created by 4 contributors:
 
-### Analyzing the Bundle Size
+- [Felix_Goyeh](https://github.com/felix112751)
+- [Yussuf_Ibrahim](https://github.com/Yussuf-ibra)
+- [Mark_Kamau](https://github.com/Mars254)
+- [Fiona_Mburu](https://github.com/mburufiona)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is open-source and available under the MIT License.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Deployed Link.
