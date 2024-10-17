@@ -34,4 +34,4 @@ def cart():
 
 
 if __name__ == '__main__':
-    app.run(port =  4000, debug = True)  # run the app in debug mode on port 500
+    app.run(port =  4000, debug = True)  
