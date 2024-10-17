@@ -10,6 +10,17 @@ class Artist(db.Model):
     name = db.Column(db.String(100), nullable=False)
     artworks = db.relationship('Artwork', backref='artist', lazy=True)
 
+# Create the User model
+class User(db.Model):
+    __tablename__ = 'users'
+
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), unique=True, nullable=False)
+
+    carts = db.relationship('Cart', backref='user', lazy=True)
+
 # Model for Artworks
 class Artwork(db.Model):
     __tablename__ = 'artworks'
@@ -32,8 +43,6 @@ class Cart(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     artwork_id = db.Column(db.Integer, db.ForeignKey('artworks.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-
-    # Additional attribute for the Cart
     quantity = db.Column(db.Integer, nullable=False, default=1)
 
     artwork = db.relationship('Artwork', backref='carts', lazy=True)
