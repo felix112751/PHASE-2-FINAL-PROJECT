@@ -1,10 +1,16 @@
-# PHASE 2 PROJECT
+# PHASE 4 PROJECT
 
 ## VIRTUAL ART PROJECT
 
 ## *Overview*
 
 Virtual Art Project is an e-commerce platform that has been built using React. The platform allows users to browse, like and purchase artworks, the platform also adds artworks for sellers who want to sell their art and it also provides a basic shopping cart functionality. 
+
+The platform enables users to add their artwork for sale and offers a shopping cart feature to manage potential purchases.
+
+This project has been developed using a combination of React for the frontend and Flask with SQLAlchemy for the backend.
+
+THe backend manages user data, artwork information and shopping cart functionality and the frontend provides an interactive user experience
 
 ## *Functionality*
 
