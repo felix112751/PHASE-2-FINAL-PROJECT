@@ -30,6 +30,13 @@ THe backend manages user data, artwork information and shopping cart functionali
 - Built using React and React outer for client-side routing.
 - Uses backend API to manage artwork data.
 
+- The following languages were used:
+[![React](https://img.shields.io/badge/React-JS-navy?style=for-the-badge&labelColor=black&logo=react&logoColor=blue)](https://reactjs.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-JS-gold?style=for-the-badge&labelColor=black&logo=javascript)](https://www.javascript.com/)
+[![Python](https://img.shields.io/badge/Python-3-blue?style=for-the-badge&labelColor=gold&logo=python)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-Framework-red?style=for-the-badge&labelColor=blue&logo=flask)](https://flask.palletsprojects.com/)
+[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red?style=for-the-badge&labelColor=grey&logo=sqlalchemy)](https://www.sqlalchemy.org/)
+
 ## *Components*
 
 1. `Navbar`: A navigation bar component that provides links to different routes.
