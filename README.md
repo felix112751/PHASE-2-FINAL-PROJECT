@@ -12,7 +12,7 @@ This project has been developed using a combination of React for the frontend an
 
 THe backend manages user data, artwork information and shopping cart functionality and the frontend provides an interactive user experience
 
-## *Functionality*
+## *Features*
 
 - Browse artworks in the gallery.
 - View details of individual artworks.
