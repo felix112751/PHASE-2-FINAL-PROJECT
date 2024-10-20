@@ -35,12 +35,11 @@ THe backend manages user data, artwork information and shopping cart functionali
 5. `ArtDetails`: A component that displays the details of an individual artwork.
 5. `Cart`: A shopping cart component that displays the artworks added by the user.
 
-## *API Endpoints*
-
-- `GET `: Retrieves a list of artworks from the backend API
-- `POST `: Creates a new artwork in the backend API
-- `PATCH `: Updates an existing artwork in the backend API
-
+## Frontend API Requests
+- `Fetch Artworks`: Retrieves the list of artworks (*GET /artworks*).
+- `Submit Arwork`: Adds a new artwork to the system (*POST /artworks.*).
+- `Fetch Cart`: Retrieves the user's shopping cart (*GET/users/:user_id/cart*).
+- `Add To Cart`: Adds an artwork to the user's shopping cart (*POST /users/:user_id/cart*).
 ## Installation
 
 To run this project locally, follow these steps:
