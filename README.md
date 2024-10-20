@@ -1,3 +1,7 @@
+![GitHub contributors](https://img.shields.io/github/contributors/felix112751/PHASE-2-FINAL-PROJECT)
+![GitHub license](https://img.shields.io/github/license/felix112751/PHASE-2-FINAL-PROJECT)
+![GitHub stars](https://img.shields.io/github/stars/felix112751/PHASE-2-FINAL-PROJECT)
+![GitHub forks](https://img.shields.io/github/forks/felix112751/PHASE-2-FINAL-PROJECT)
 # PHASE 4 PROJECT
 
 ## VIRTUAL ART PROJECT
