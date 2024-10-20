@@ -1,5 +1,5 @@
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/felix112751/PHASE-2-FINAL-PROJECT?style=for-the-badge&logoColor=green&logoSize=60px&labelColor=blue&color=green-blue)
-
+![GitHub forks](https://img.shields.io/github/forks/felix112751/PHASE-2-FINAL-PROJECT?style=for-the-badge&labelColor=blue&color=yellow)
 
 
 # PHASE 4 PROJECT
