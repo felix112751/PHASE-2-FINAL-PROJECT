@@ -58,7 +58,7 @@ THe backend manages user data, artwork information and shopping cart functionali
 - `Add To Cart`: Adds an artwork to the user's shopping cart (*POST /users/:user_id/cart*).
 ## Installation
 
-To run this project locally, follow these steps:
+To run the frontend:
 
 1. #### Clone the repository:
 
@@ -108,7 +108,26 @@ Start the server by running the following command in the project directory:
 
 ```bash
 json-server --watch db.json
+
 ```
+
+## Backend Details
+The backend is built using **Flask** with **SQLAlchemy** for database management. It handles user data, artwork details and shopping cart functionality
+
+### Backend Models
+1. **Artist**
+- Stores information about the artist.
+- Attributes: id, name, bio, image
+2. **Artwork**
+- Stores information about the artwork such as the title, image, year, price and likes.
+- Attributes: id, title, artist, image, year, likes, price
+3. **Cart**
+- Stores information about the user's shopping cart.
+- Attributes: id, user_id, artworks, total_price
+4. **User**
+- Stores information about the user such as username, password and email.
+- Attributes: id, username, password, email
+
 ### Contributors
 This application was a group project that was created by 4 contributors:
 
