@@ -189,8 +189,7 @@ Thanks to these wonderful people for their contributions:
         <img src="https://avatars.githubusercontent.com/u/172261865?v=4" width="100px;" alt="Felix Goyeh"/><br />
         <sub><b>Felix Goyeh</b></sub>
       </a><br />
-      <a href="#" title="Code">💻</a> 
-      <a href="#" title="Design"></a>
+      <a href="#" title="Code">💻</a>
     </td>
     <td align="center">
       <a href="https://github.com/Yussuf-ibra">
@@ -208,13 +207,21 @@ Thanks to these wonderful people for their contributions:
     </td>
     <td align="center">
       <a href="https://github.com/mburufiona">
-        <img src="https://avatars.githubusercontent.com/u/172260583?s=400&u=7c8ebfe708a5be75eb9e479e0119b19a53ffb757&v=4"width="100px;" alt="Fiona Mburu"/><br />
+        <img src="https://avatars.githubusercontent.com/u/172260583?s=400&u=7c8ebfe708a5be75eb9e479e0119b19a53ffb757&v=4" width="100px;" alt="Fiona Mburu"/><br />
         <sub><b>Fiona Mburu</b></sub>
       </a><br />
       <a href="#" title="Testing">⚠️</a>
     </td>
+    <td align="center">
+      <a href="https://github.com/maajidmuhammad/python-p4-chatterbox-lab">
+        <img src="https://avatars.githubusercontent.com/u/162092453?v=4" width="100px;" alt="Maajid Muhammad"/><br />
+        <sub><b>Maajid Muhammad</b></sub>
+      </a><br />
+      <a href="#" title="Code">💻</a>
+    </td>
   </tr>
 </table>
+
 
 
 This project is open-source and available under the MIT License.
