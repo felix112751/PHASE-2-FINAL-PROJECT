@@ -178,13 +178,44 @@ flask db upgrade
 flask run
 ```
 
-### Contributors
-This application was a group project that was created by 4 contributors:
+## Contributors ✨
 
-- [Felix_Goyeh](https://github.com/felix112751)
-- [Yussuf_Ibrahim](https://github.com/Yussuf-ibra)
-- [Mark_Kamau](https://github.com/Mars254)
-- [Fiona_Mburu](https://github.com/mburufiona)
+Thanks to these wonderful people for their contributions:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/felix112751">
+        <img src="https://avatars.githubusercontent.com/u/172261865?v=4" width="100px;" alt="Felix Goyeh"/><br />
+        <sub><b>Felix Goyeh</b></sub>
+      </a><br />
+      <a href="#" title="Code">💻</a> 
+      <a href="#" title="Design"></a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Yussuf-ibra">
+        <img src="https://avatars.githubusercontent.com/u/172136288?v=4" width="100px;" alt="Yussuf Ibrahim"/><br />
+        <sub><b>Yussuf Ibrahim</b></sub>
+      </a><br />
+      <a href="#" title="Documentation">📖</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Mars254">
+        <img src="https://avatars.githubusercontent.com/u/174427461?v=4" width="100px;" alt="Mark Kamau"/><br />
+        <sub><b>Mark Kamau</b></sub>
+      </a><br />
+      <a href="#" title="Code">💻</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/mburufiona">
+        <img src="https://avatars.githubusercontent.com/u/172260583?s=400&u=7c8ebfe708a5be75eb9e479e0119b19a53ffb757&v=4"width="100px;" alt="Fiona Mburu"/><br />
+        <sub><b>Fiona Mburu</b></sub>
+      </a><br />
+      <a href="#" title="Testing">⚠️</a>
+    </td>
+  </tr>
+</table>
+
 
 This project is open-source and available under the MIT License.
 
