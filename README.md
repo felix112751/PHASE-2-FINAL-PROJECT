@@ -1,5 +1,4 @@
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/felix112751/PHASE-2-FINAL-PROJECT?style=for-the-badge&logoColor=green&logoSize=60px&labelColor=blue&color=green-blue)
-
 ![GitHub forks](https://img.shields.io/github/forks/felix112751/PHASE-2-FINAL-PROJECT?style=for-the-badge&labelColor=blue&color=yellow)
 
 
@@ -34,9 +33,13 @@ THe backend manages user data, artwork information and shopping cart functionali
 - The following languages were used:
 
 [![React](https://img.shields.io/badge/React-JS-navy?style=for-the-badge&labelColor=black&logo=react&logoColor=blue)](https://reactjs.org/)
+
 [![JavaScript](https://img.shields.io/badge/JavaScript-JS-gold?style=for-the-badge&labelColor=black&logo=javascript)](https://www.javascript.com/)
+
 [![Python](https://img.shields.io/badge/Python-3-blue?style=for-the-badge&labelColor=gold&logo=python)](https://www.python.org/)
+
 [![Flask](https://img.shields.io/badge/Flask-Framework-red?style=for-the-badge&labelColor=blue&logo=flask)](https://flask.palletsprojects.com/)
+
 [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red?style=for-the-badge&labelColor=grey&logo=sqlalchemy)](https://www.sqlalchemy.org/)
 
 ## *Components*
