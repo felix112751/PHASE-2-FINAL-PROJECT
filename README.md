@@ -127,6 +127,56 @@ The backend is built using **Flask** with **SQLAlchemy** for database management
 4. **User**
 - Stores information about the user such as username, password and email.
 - Attributes: id, username, password, email
+### Backend API Endpoints
+- **Artists**:
+  - `GET /artists`: Retrieve a list of all artists.
+  - `POST /artists`: Create a new artist.
+
+- **Artworks**:
+  - `GET /artworks`: Retrieve a list of all artworks.
+  - `POST /artworks`: Create a new artwork.
+  - `GET /artworks/:id`: Retrieve details of a specific artwork.
+  - `DELETE /artworks/:id`: Delete a specific artwork.
+
+- **Carts**:
+  - `GET /users/:user_id/cart`: Retrieve the user's shopping cart.
+  - `POST /users/:user_id/cart`: Add artwork(s) to the user's shopping cart.
+  - `DELETE /users/:user_id/cart`: Remove artwork(s) from the user's shopping cart.
+
+- **Users**:
+  - `GET /users`: Retrieve a list of all users.
+  - `POST /users`: Create a new user.
+
+### Backend Installation
+To run this project this locally:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/felix112751/art-gallery.git
+cd art-gallery
+```
+2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+3. Create a virtual environment:
+```bash
+python -m venv venv
+```
+4. Activate the virtual environment:
+```bash
+source venv/bin/activate
+```
+5. Set up the database:
+```bash
+flask db init
+flask db migrate
+flask db upgrade
+```
+6. Run the server:
+```bash
+flask run
+```
 
 ### Contributors
 This application was a group project that was created by 4 contributors:
