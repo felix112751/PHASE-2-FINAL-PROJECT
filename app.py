@@ -1,76 +1,93 @@
-from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, make_response, request
 from flask_migrate import Migrate
-from models import db, Artist, Artwork, User, Cart
+from models import db, User, Post, Artwork, Artist
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///art_app.db'  # Change this as needed
+migrate = Migrate(app, db)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flask.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
-migrate = Migrate(app, db)
+@app.route('/')
+def index():
+    return 'Welcome to flask'
 
-# Route to get all artists
-@app.route('/artists', methods=['GET'])
-def get_artists():
-    artists = Artist.query.all()
-    return jsonify([{'id': artist.id, 'name': artist.name} for artist in artists])
+@app.route('/users', methods=['GET', 'POST'])
+def users():
+    if request.method == 'GET':
+        response = [user.to_dict() for user in User.query.all()]
+        return make_response(response, 200)
 
-# Route to get all artworks
-@app.route('/artworks', methods=['GET'])
-def get_artworks():
-    artworks = Artwork.query.all()
-    return jsonify([{
-        'id': artwork.id,
-        'title': artwork.title,
-        'image': artwork.image,
-        'year': artwork.year,
-        'price': artwork.price,
-        'detail': artwork.detail,
-        'likes': artwork.likes,
-        'sold': artwork.sold,
-        'artist_id': artwork.artist_id
-    } for artwork in artworks])
+    if request.method == 'POST':
+        data = request.get_json()
+        new_user = User(username=data['username'], email=data['email'])
+        db.session.add(new_user)
+        db.session.commit()
+        return make_response(new_user.to_dict(), 201)
 
-# Route to create a new artist
-@app.route('/artists', methods=['POST'])
-def create_artist():
-    data = request.json
-    new_artist = Artist(name=data['name'])
-    db.session.add(new_artist)
-    db.session.commit()
-    return jsonify({'id': new_artist.id, 'name': new_artist.name}), 201
+@app.route('/posts', methods=['GET', 'POST'])
+def posts():
+    if request.method == 'GET':
+        response = [post.to_dict() for post in Post.query.all()]
+        return make_response(response, 200)
 
-# Route to create a new artwork
-@app.route('/artworks', methods=['POST'])
-def create_artwork():
-    data = request.json
-    new_artwork = Artwork(
-        title=data['title'],
-        image=data['image'],
-        year=data['year'],
-        price=data['price'],
-        detail=data.get('detail', ''),
-        artist_id=data['artist_id']
-    )
-    db.session.add(new_artwork)
-    db.session.commit()
-    return jsonify({'id': new_artwork.id, 'title': new_artwork.title}), 201
+@app.route('/artworks', methods=['GET', 'POST'])
+def artworks():
+    if request.method == 'GET':
+        response = [artwork.to_dict() for artwork in Artwork.query.all()]
+        return make_response(response, 200)
 
-# Route to create a new user
-@app.route('/users', methods=['POST'])
-def create_user():
-    data = request.json
-    new_user = User(username=data['username'], password=data['password'], email=data['email'])
-    db.session.add(new_user)
-    db.session.commit()
-    return jsonify({'id': new_user.id, 'username': new_user.username}), 201
+    if request.method == 'POST':
+        data = request.get_json()
+        new_artwork = Artwork(title=data['title'], description=data['description'], artist_id=data['artist_id'])
+        db.session.add(new_artwork)
+        db.session.commit()
+        return make_response(new_artwork.to_dict(), 201)
 
-# Route to get user's cart
-@app.route('/users/<int:user_id>/cart', methods=['GET'])
-def get_user_cart(user_id):
-    carts = Cart.query.filter_by(user_id=user_id).all()
-    return jsonify([{'id': cart.id, 'artwork_id': cart.artwork_id, 'quantity': cart.quantity} for cart in carts])
+@app.route('/artworks/<int:id>', methods=['PUT', 'DELETE'])
+def artwork_detail(id):
+    artwork = Artwork.query.get_or_404(id)
+
+    if request.method == 'PUT':
+        data = request.get_json()
+        artwork.title = data['title']
+        artwork.description = data['description']
+        artwork.artist_id = data['artist_id']
+        db.session.commit()
+        return make_response(artwork.to_dict(), 200)
+
+    if request.method == 'DELETE':
+        db.session.delete(artwork)
+        db.session.commit()
+        return make_response('', 204)
+
+@app.route('/artists', methods=['GET', 'POST'])
+def artists():
+    if request.method == 'GET':
+        response = [artist.to_dict() for artist in Artist.query.all()]
+        return make_response(response, 200)
+
+    if request.method == 'POST':
+        data = request.get_json()
+        new_artist = Artist(name=data['name'])
+        db.session.add(new_artist)
+        db.session.commit()
+        return make_response(new_artist.to_dict(), 201)
+
+@app.route('/artists/<int:id>', methods=['PUT', 'DELETE'])
+def artist_detail(id):
+    artist = Artist.query.get_or_404(id)
+
+    if request.method == 'PUT':
+        data = request.get_json()
+        artist.name = data['name']
+        db.session.commit()
+        return make_response(artist.to_dict(), 200)
+
+    if request.method == 'DELETE':
+        db.session.delete(artist)
+        db.session.commit()
+        return make_response('', 204)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=3003, debug=True)
