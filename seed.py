@@ -27,7 +27,8 @@ with app.app_context():
     db.session.add_all(artists)
     db.session.commit()
 
-   artworks = [
+    artworks = [
+    
     Artwork(title="Starry Night", image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiXokZHJc3iND6Uqax-iQ-nU6PmC5lRPqIw&s", year=1889, price=5000, detail="Starry Night is one of Vincent van Gogh's most iconic paintings, created in 1889. It depicts a swirling night sky over a tranquil village, with bold, expressive brushstrokes capturing the motion of the stars and the moon. This masterpiece is celebrated for its emotional intensity, innovative use of color, and dramatic brushwork.", likes=8, sold=False, artist_id=1),
     
     Artwork(title="Mona Lisa", image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0s5B5TIgNtd8NBG31BBu2v1cCxIZi3AEE2g&s", year=1503, price=100000, detail="The Mona Lisa is a portrait painting by the Italian Renaissance artist Leonardo da Vinci, completed between 1503 and 1506. It is renowned for its sophisticated use of sfumato and the enigmatic expression of the woman in the portrait.", likes=10, sold=False, artist_id=2),
@@ -49,6 +50,7 @@ with app.app_context():
     Artwork(title="The Kiss", image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS87titbSUj74DnfP14bZn4stGqggtO8C2vjw&s", year=1908, price=10000, detail="The Kiss is known for its use of gold leaf and intricate patterns, symbolizing the sensuality of the romantic bond it portrays.", likes=13, sold=False, artist_id=10),
 ]
 
+    
     db.session.add_all(artworks)
     db.session.commit()
 
