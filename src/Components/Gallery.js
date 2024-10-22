@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Gallery.css"; // Import the CSS file
+import "./Gallery.css"; 
 import Navbar from "./Navbar";
 
 
