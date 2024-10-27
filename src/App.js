@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./Components/Navbar";
+// import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Gallery from "./Components/Gallery";
 import AddArt from "./Components/AddArt";
@@ -12,11 +12,21 @@ function App() {
   const [artworks, setArtworks] = useState([]);
   const [cart, setCart] = useState([]);
 
+  
+
   useEffect(() => {
     fetch("https://phase-2-final-project-sbww.onrender.com/artworks")
-      .then((response) => response.json())
-      .then((data) => setArtworks(data));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => setArtworks(data))
+      .catch((error) => console.error('Fetch error:', error));
   }, []);
+  
+
 
   const addArt = (newArt) => {
     setArtworks([...artworks, newArt]);
