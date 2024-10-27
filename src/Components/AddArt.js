@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AddArt.css"; // Import the CSS file
+import "./AddArt.css"; 
 import Navbar from "./Navbar";
 
 function AddArt({ onAddArt }) {

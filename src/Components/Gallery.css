@@ -7,7 +7,7 @@
 .odin {
   width: 100%;
   min-height: 200vh;
-  max-height: 430vh;
+  max-height: 470vh;
   background-color: #111111;
   background-image: linear-gradient(
     32deg,
@@ -25,7 +25,7 @@
   padding: 20px;
   text-align: center;
   position: relative;
-  top: -1200px;
+  top: -1640px;
 }
 
 
