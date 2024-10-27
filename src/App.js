@@ -13,7 +13,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch("https://artt-backend.vercel.app/artworks")
+    fetch("https://phase-2-final-project-sbww.onrender.com/artworks")
       .then((response) => response.json())
       .then((data) => setArtworks(data));
   }, []);
@@ -27,7 +27,7 @@ function App() {
       art.id === id ? { ...art, likes: art.likes + 1 } : art
     );
     setArtworks(updatedArtworks);
-    fetch(`https://artt-backend.vercel.app/artworks/${id}`, {
+    fetch(`https://phase-2-final-project-sbww.onrender.com/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -43,7 +43,7 @@ function App() {
       setArtworks(
         artworks.map((a) => (a.id === id ? { ...a, sold: true } : a))
       );
-      fetch(`https://artt-backend.vercel.app/artworks/${id}`, {
+      fetch(`https://phase-2-final-project-sbww.onrender.com/artworks/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sold: true }),
@@ -54,7 +54,7 @@ function App() {
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
     setArtworks(artworks.map((a) => (a.id === id ? { ...a, sold: false } : a)));
-    fetch(`https://artt-backend.vercel.app/artworks/${id}`, {
+    fetch(`https://phase-2-final-project-sbww.onrender.com/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sold: false }),
