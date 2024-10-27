@@ -26,6 +26,8 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
+  
+
   }
   
   
@@ -43,7 +45,7 @@ body{
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      top: -1355px;
+      top: -1792px;
 
     }
     
