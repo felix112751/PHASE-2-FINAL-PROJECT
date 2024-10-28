@@ -13,7 +13,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch("https://phase-2-final-project-sbww.onrender.com/artworks")
+    fetch("https://phase-2-final-project-2.onrender.com/artworks")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -24,7 +24,6 @@ function App() {
       .catch((error) => console.error('Fetch error:', error));
   }, []);
   
-
   const addArt = (newArt) => {
     setArtworks([...artworks, newArt]);
   };
@@ -34,7 +33,7 @@ function App() {
       art.id === id ? { ...art, likes: art.likes + 1 } : art
     );
     setArtworks(updatedArtworks);
-    fetch(`https://phase-2-final-project-1.onrender.com/artworks/${id}`, {
+    fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -50,7 +49,7 @@ function App() {
       setArtworks(
         artworks.map((a) => (a.id === id ? { ...a, sold: true } : a))
       );
-      fetch(`https://phase-2-final-project-1.onrender.com/artworks/${id}`, {
+      fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sold: true }),
@@ -61,7 +60,7 @@ function App() {
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
     setArtworks(artworks.map((a) => (a.id === id ? { ...a, sold: false } : a)));
-    fetch(`https://phase-2-final-project-1.onrender.com/artworks/${id}`, {
+    fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sold: false }),
