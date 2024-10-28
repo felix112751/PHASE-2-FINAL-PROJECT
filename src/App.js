@@ -13,17 +13,15 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch("https://phase-2-final-project-2.onrender.com/artworks")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
+    fetch("https://phase-2-final-project-2.onrender.com/artworks", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
       .then((data) => setArtworks(data))
-      .catch((error) => console.error('Fetch error:', error));
+      .catch((error) => console.error("Error fetching artworks:", error));
   }, []);
-  
+
   const addArt = (newArt) => {
     setArtworks([...artworks, newArt]);
   };
@@ -33,13 +31,14 @@ function App() {
       art.id === id ? { ...art, likes: art.likes + 1 } : art
     );
     setArtworks(updatedArtworks);
+
     fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         likes: updatedArtworks.find((art) => art.id === id).likes,
       }),
-    });
+    }).catch((error) => console.error("Error updating likes:", error));
   };
 
   const addToCart = (id) => {
@@ -49,26 +48,30 @@ function App() {
       setArtworks(
         artworks.map((a) => (a.id === id ? { ...a, sold: true } : a))
       );
+
       fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sold: true }),
-      });
+      }).catch((error) => console.error("Error updating sold status:", error));
     }
   };
 
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
     setArtworks(artworks.map((a) => (a.id === id ? { ...a, sold: false } : a)));
+
     fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sold: false }),
-    });
+    }).catch((error) => console.error("Error updating sold status:", error));
   };
 
   return (
     <Router>
+      {/* Uncomment if Navbar component is available */}
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery artworks={artworks} />} />
