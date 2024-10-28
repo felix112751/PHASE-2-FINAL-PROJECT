@@ -4,7 +4,7 @@ from models import db, User, Post, Artwork, Artist
 
 app = Flask(__name__)
 migrate = Migrate(app, db)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flask.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://db_zt0l_user:NZysVjFEiktITvV1UdLPSoLNrp62mq1k@dpg-csfk9m1u0jms73fgtg60-a/db_zt0l'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
