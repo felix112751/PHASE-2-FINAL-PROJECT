@@ -1,11 +1,14 @@
-from flask import Flask, make_response, request
+from flask import Flask, make_response, request, jsonify
 from flask_migrate import Migrate
 from models import db, User, Post, Artwork, Artist
+from flask_cors import CORS
 
 app = Flask(__name__)
 migrate = Migrate(app, db)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://db_zt0l_user:NZysVjFEiktITvV1UdLPSoLNrp62mq1k@dpg-csfk9m1u0jms73fgtg60-a/db_zt0l"
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///flask.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+CORS(app)
+
 db.init_app(app)
 
 @app.route('/')
@@ -31,18 +34,40 @@ def posts():
         response = [post.to_dict() for post in Post.query.all()]
         return make_response(response, 200)
 
+from flask import jsonify, request, make_response
+
 @app.route('/artworks', methods=['GET', 'POST'])
 def artworks():
     if request.method == 'GET':
         response = [artwork.to_dict() for artwork in Artwork.query.all()]
-        return make_response(response, 200)
+        return make_response(jsonify(response), 200)
 
     if request.method == 'POST':
         data = request.get_json()
-        new_artwork = Artwork(title=data['title'], description=data['description'], artist_id=data['artist_id'])
-        db.session.add(new_artwork)
-        db.session.commit()
-        return make_response(new_artwork.to_dict(), 201)
+        if not data:
+            return make_response(jsonify({"error": "Invalid JSON payload"}), 400)
+
+        try:
+            new_artwork = Artwork(
+                title=data['title'],
+                price=data['price'],
+                year=data['year'],
+                detail=data['detail'],
+                sold=data['sold'],
+                likes=data['likes'],
+                image=data['image'],
+                artist_id=data['artist_id']
+            )
+            db.session.add(new_artwork)
+            db.session.commit()
+            return make_response(jsonify(new_artwork.to_dict()), 201)
+
+        except KeyError as e:
+            return make_response(jsonify({"error": f"Missing key: {e}"}), 400)
+
+
+
+
 
 @app.route('/artworks/<int:id>', methods=['PUT', 'DELETE'])
 def artwork_detail(id):

@@ -39,6 +39,10 @@
       color: #555;
     }
     
+    .add-art-container input{
+      color: white;
+    }
+
     .add-art-container input,
     .add-art-container textarea {
       width: 96%;

@@ -13,17 +13,19 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch("https://phase-2-final-project-2.onrender.com/artworks", {
+    fetch("http://127.0.0.1:4000/artworks", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())
       .then((data) => setArtworks(data))
       .catch((error) => console.error("Error fetching artworks:", error));
-  }, []);
+      
+    }, []);
 
   const addArt = (newArt) => {
     setArtworks([...artworks, newArt]);
+    
   };
 
   const likeArt = (id) => {
@@ -32,7 +34,7 @@ function App() {
     );
     setArtworks(updatedArtworks);
 
-    fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
+    fetch(`http://127.0.0.1:4000/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -49,8 +51,8 @@ function App() {
         artworks.map((a) => (a.id === id ? { ...a, sold: true } : a))
       );
 
-      fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
-        method: "PATCH",
+      fetch(`http://127.0.0.1:4000/artworks/${id}`, {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sold: true }),
       }).catch((error) => console.error("Error updating sold status:", error));
@@ -61,7 +63,7 @@ function App() {
     setCart(cart.filter((item) => item.id !== id));
     setArtworks(artworks.map((a) => (a.id === id ? { ...a, sold: false } : a)));
 
-    fetch(`https://phase-2-final-project-2.onrender.com/artworks/${id}`, {
+    fetch(`http://127.0.0.1:4000/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sold: false }),
