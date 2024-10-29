@@ -1,7 +1,7 @@
 from flask import Flask, make_response, request, jsonify
 from flask_migrate import Migrate
 from models import db, User, Post, Artwork, Artist
-# from flask_cors import CORS
+from flask_cors import CORS
 
 app = Flask(__name__)
 migrate = Migrate(app, db)
