@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 migrate = Migrate(app, db)
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///flask.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flask.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 CORS(app)
 
@@ -13,7 +13,7 @@ db.init_app(app)
 
 @app.route('/')
 def index():
-    return 'Welcome to flask'
+    return 'Welcome to Flask'
 
 @app.route('/users', methods=['GET', 'POST'])
 def users():
@@ -33,8 +33,6 @@ def posts():
     if request.method == 'GET':
         response = [post.to_dict() for post in Post.query.all()]
         return make_response(response, 200)
-
-from flask import jsonify, request, make_response
 
 @app.route('/artworks', methods=['GET', 'POST'])
 def artworks():
@@ -65,19 +63,20 @@ def artworks():
         except KeyError as e:
             return make_response(jsonify({"error": f"Missing key: {e}"}), 400)
 
-
-
-
-
-@app.route('/artworks/<int:id>', methods=['PUT', 'DELETE'])
+@app.route('/artworks/<int:id>', methods=['GET', 'PUT', 'DELETE'])
 def artwork_detail(id):
     artwork = Artwork.query.get_or_404(id)
 
+    if request.method == 'GET':
+        return make_response(artwork.to_dict(), 200)
+
     if request.method == 'PUT':
         data = request.get_json()
-        artwork.title = data['title']
-        artwork.description = data['description']
-        artwork.artist_id = data['artist_id']
+        
+        # Update the artwork fields
+        artwork.title = data.get('title', artwork.title)  # Use existing value if not provided
+        artwork.detail = data.get('detail', artwork.detail)  # Fixing this line
+        artwork.artist_id = data.get('artist_id', artwork.artist_id)  # Use existing value if not provided
         db.session.commit()
         return make_response(artwork.to_dict(), 200)
 

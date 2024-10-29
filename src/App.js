@@ -13,7 +13,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:4000/artworks", {
+    fetch("http://127.0.0.1:5000/artworks", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -34,7 +34,7 @@ function App() {
     );
     setArtworks(updatedArtworks);
 
-    fetch(`http://127.0.0.1:4000/artworks/${id}`, {
+    fetch(`http://127.0.0.1:5000/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -51,7 +51,7 @@ function App() {
         artworks.map((a) => (a.id === id ? { ...a, sold: true } : a))
       );
 
-      fetch(`http://127.0.0.1:4000/artworks/${id}`, {
+      fetch(`http://127.0.0.1:5000/artworks/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sold: true }),
@@ -63,7 +63,7 @@ function App() {
     setCart(cart.filter((item) => item.id !== id));
     setArtworks(artworks.map((a) => (a.id === id ? { ...a, sold: false } : a)));
 
-    fetch(`http://127.0.0.1:4000/artworks/${id}`, {
+    fetch(`http://127.0.0.1:5000/artworks/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sold: false }),
