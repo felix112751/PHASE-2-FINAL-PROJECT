@@ -26,7 +26,10 @@ function ArtDetail({ artworks, onLike, onAddToCart }) {
         <h2 className={styles.artTitle}>{art.title}</h2>
         <img src={art.image} alt={art.title} className={styles.artImage} />
         <div className={styles.artContent}>
-          <p className={styles.artInfo}>Artist: {art.artist.name}</p>
+          {/* Check if artist exists before accessing its properties */}
+          <p className={styles.artInfo}>
+            Artist: {art.artist ? art.artist.name : "Unknown"}
+          </p>
           <p className={styles.artInfo}>Year: {art.year}</p>
           <p className={styles.artPrice}>Price: ${art.price}</p>
           <p className={styles.artDetails}>Details: {art.detail}</p>
